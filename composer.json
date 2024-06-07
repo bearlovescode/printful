@@ -1,0 +1,16 @@
+{
+    "name": "bearlovescode/printful",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Bearlovescode\\Printful\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nic Barr",
+            "email": "code@nicholasbarr.net"
+        }
+    ],
+    "require": {}
+}
