@@ -12,5 +12,15 @@
             "email": "code@nicholasbarr.net"
         }
     ],
-    "require": {}
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/bearlovescode/datamodels.git"
+        }
+
+    ],
+    "require": {
+        "bearlovescode/datamodels": "^1.1.2",
+        "guzzlehttp/guzzle": "^7.8"
+    }
 }
