@@ -8,7 +8,7 @@
     {
         public function changePackingSlip() {}
 
-        public function getAllStoreData(): array
+        public function getAllStores(): array
         {
             $result = [];
 
