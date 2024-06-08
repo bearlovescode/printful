@@ -5,7 +5,7 @@
     use Bearlovescode\Datamodels\DataModel;
     use Psr\Http\Message\UriInterface;
 
-    class Configuration extends DataModel
+    class Configuration extends DataModel implements IConfiguration
     {
         public UriInterface $apiUrl;
         public Token $apiKey;
@@ -18,6 +18,12 @@
 
         public function setApiKeyAsToken(&$data): void
         {
+            if($data['apiKey'] instanceof Token)
+            {
+                $this->apiKey = $data['apiKey'];
+                unset($data['apiKey']);
+            }
+
             $key = '';
 
             if (is_array($data))
