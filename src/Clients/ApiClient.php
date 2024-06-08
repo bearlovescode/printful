@@ -37,7 +37,7 @@
             if ($res->getStatusCode() !== 200) {
                 $this->handleApiError($data);
             }
-            return json_decode($data);
+            return $data;
         }
 
         private function buildRequestOptions(array $overrides = []): array
