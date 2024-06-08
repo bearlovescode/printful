@@ -12,7 +12,7 @@
         {
             $result = [];
 
-            $req = new Request('GET', '/stores/');
+            $req = new Request('GET', 'stores');
             $data = $this->client->handle($req);
 
             if (isset($data->result))
@@ -26,7 +26,7 @@
 
         public function getStoreData(string $id): PrintfulStore|null
         {
-            $req = new Request('GET', sprintf('/stores/%s', $id));
+            $req = new Request('GET', sprintf('stores/%s', $id));
 
             $data = $this->client->handle($req);
 

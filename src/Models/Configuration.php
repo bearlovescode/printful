@@ -9,6 +9,7 @@
     {
         public UriInterface $apiUrl;
         public Token $apiKey;
+        public ?string $appName;
         public bool $debug = false;
 
         public function __construct(array|object $data)

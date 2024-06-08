@@ -44,6 +44,7 @@
         {
             $options = [
                 'headers' => [
+                    'user-agent' => $this->config->appName ?? '',
                     'accept' => 'application/json'
                 ],
                 'debug' => $this->config->debug
