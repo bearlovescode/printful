@@ -51,7 +51,8 @@
             ];
 
             if (!empty($this->config->apiKey))
-                $options['headers']['authorization'] = $this->config->apiKey->value;
+                $options['headers']['authorization'] =
+                    sprintf('Bearer %s', $this->config->apiKey->value);
 
             return array_merge($options, $overrides);
         }
