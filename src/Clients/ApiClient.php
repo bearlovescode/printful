@@ -42,10 +42,15 @@
 
         private function buildRequestOptions(array $overrides = []): array
         {
-            $options = [];
+            $options = [
+                'headers' => [
+                    'accept' => 'application/json'
+                ],
+                'debug' => $this->config->debug
+            ];
 
             if (!empty($this->config->apiKey))
-                $options['auth'] = 'Bearer ' . $this->config->apiKey->value;
+                $options['headers']['authorization'] = $this->config->apiKey->value;
 
             return array_merge($options, $overrides);
         }
