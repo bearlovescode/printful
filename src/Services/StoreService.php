@@ -8,7 +8,21 @@
     {
         public function changePackingSlip() {}
 
-        public function getAllStoreData() {}
+        public function getAllStoreData(): array
+        {
+            $result = [];
+
+            $req = new Request('GET', '/stores/');
+            $data = $this->client->handle($req);
+
+            if (isset($data->result))
+            {
+                foreach ($data->result as $store)
+                    $result[] = new PrintfulStore($store);
+            }
+
+            return $result;
+        }
 
         public function getStoreData(string $id): PrintfulStore|null
         {
